@@ -5,7 +5,7 @@ var ayarlar = require('../ayarlar.json');
 
 exports.run = async (client, message, args, config) => {
 
-  if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`Bu komutu kullanabilmek için **Kanalları Yönet** iznine sahip olmalısın!`);
+  if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.reply(`Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`);
   
   const db = require('quick.db');
   
@@ -13,7 +13,7 @@ exports.run = async (client, message, args, config) => {
   let channel = message.mentions.channels.first()
   
     if (!channel) {
-        return message.reply("** Doğru Kullanım  -davettakip #kanal **")
+        return message.reply("** Doğru Kullanım  +davettakip #kanal **")
     }
 
     db.set(`dKanal_${message.guild.id}`, "<#"+channel.id+">")
@@ -28,7 +28,7 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: ['davet-kanal-belirle','davetkanal','davettakip','davet-takip','davettakipayarla','davet-takip-ayarla'],
-    permLevel: 0,
+    permLevel: 4,
 }
 exports.help = {
     name: 'davet-takip',

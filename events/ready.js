@@ -6,9 +6,9 @@ const ayarlar = require('../ayarlar.json')
 var prefix= ayarlar.prefix;
 
 module.exports = client => {
-  console.log(`Star | Code`);
+  console.log(`Exly | Code`);
   console.log(`Komutlar Hazı!`);
-  console.log(`Star | Code`);
+  console.log(`Exly | Code`);
   client.user.setStatus("online");
   //idle = boşta
   //dnd = rahatsız etmeyin
@@ -16,9 +16,9 @@ module.exports = client => {
     var oyun = [
         "Yapımcım #SefaKüyük",
         "+yardım & +moderasyon & +moderasyon2",
-        "+davet",
-        "Atlas Gaming #Sponsor",
-        "Cumhuriyet Bilişim #Sponsor",
+        "+sponsor",
+        "Yusuf YT #Sponsor",
+        "Voltran Bilişim #Sponsor",
     ];
   
     setInterval(function() {

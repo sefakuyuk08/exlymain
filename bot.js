@@ -207,7 +207,7 @@ client.on("message", async msg => {
             .setFooter("PinkCOde Küfür Sistemi", client.user.avatarURL)
             .setAuthor(
               msg.guild.owner.user.username,
-              msg.guild.owner.user.avatarURL
+              msg.guild.owner.avatarURL
             )
             .setDescription(
               "PinkCode, " +
@@ -270,6 +270,7 @@ client.on("guildMemberRemove", async member => {
     );
   return;
 });
+
 ///sa-as///
 client.on("message", msg => {
   if (msg.content.toLowerCase() === "sa") {
@@ -280,6 +281,24 @@ client.on("message", msg => {
 client.on("message", msg => {
   if (msg.content.toLowerCase() === "Sa") {
     msg.reply("**Aleyküm Selam Hoşgeldin**");
+  }
+});
+
+client.on("message", msg => {
+  if (msg.content.toLowerCase() === "sefo") {
+    msg.reply("**Sefa Adamdır Gerisi Yalandır**");
+  }
+});
+
+client.on("message", msg => {
+  if (msg.content.toLowerCase() === "şevo") {
+    msg.reply ("**SELO : ŞEVO BEBEĞİM TEKDİR GERİSİ YALANDIR**");
+  }
+});
+
+client.on("message", msg => {
+  if (msg.content.toLowerCase() === "izmir") {
+    msg.reply ("**[TİG] İzmir Gaming #Kalite **");
   }
 });
 
@@ -320,20 +339,38 @@ client.on("message", msg => {
 });
 
 client.on("message", msg => {
+  if (msg.content.toLowerCase() === "selamun aleyküm") {
+    msg.reply("**Aleyküm Selam Hoşgeldin**");
+  }
+});
+
+client.on("message", msg => {
   if (msg.content.toLowerCase() === "Youtube") {
-    msg.reply("**__Youtube Link__** : ");//Lord Creative
+    msg.reply("**https://www.kisa.link/OxQ7**");
   }
 });
 
 client.on("message", msg => {
   if (msg.content.toLowerCase() === "youtube") {
-    msg.reply("**__Youtube Link__** : ");
+    msg.reply("**https://www.kisa.link/OxQ7  ** : ");
   }
 });
 
 client.on("message", msg => {
   if (msg.content.toLowerCase() === "YOUTUBE") {
-    msg.reply("**__Youtube Link__** : ");
+    msg.reply("**https://www.kisa.link/OxQ7  ** : ");
+  }
+});
+
+client.on("message", msg => {
+  if (msg.content.toLowerCase() === "etiket") {
+    msg.reply("");
+  }
+});
+
+client.on("message", msg => {
+  if (msg.content.toLowerCase() === "kurucum") {
+    msg.reply("Kurucum Bu : <@745667968477823018>");
   }
 });
 
@@ -376,7 +413,7 @@ client.on("message", async msg => {
           let embed = new Discord.RichEmbed()
             .setColor(0xffa300)
             .setFooter(
-              "Fays BOT  -|-  Reklam engellendi.",
+              "Exly BOT  -|-  Reklam engellendi.",
               client.user.avatarURL
             )
             .setAuthor(
@@ -384,7 +421,7 @@ client.on("message", async msg => {
               msg.guild.owner.user.avatarURL
             )
             .setDescription(
-              " Fays Reklam Sistemi, " +
+              " Exly Reklam Sistemi, " +
                 `**${msg.guild.name}**` +
                 " Adlı Sunucuda Reklam Yakaladım."
             )
@@ -438,7 +475,7 @@ client.on('guildMemberAdd', member => {
  
     const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
 
-    const davetçi = client.users.get(invite.inviter.id);
+    const davetçi = client.users.cache.get(invite.inviter.id);
      db.add(`davet_${invite.inviter.id + member.guild.id}`,1)
 let bal  = db.fetch(`davet_${invite.inviter.id + member.guild.id}`)
    member.guild.channels.get(channel).send(`<a:blobjoining:696373472431177781> ** <@${member.id}> Joined**; İnvited by **${davetçi.tag}** (`+'**'+bal+'** invites)')
@@ -472,7 +509,7 @@ client.on("message", async message => {
     let u = message.mentions.users.first() || message.author;
     if (command === "sunucu-kur") {
       if (
-        message.guild.channels.find(channel => channel.name === "Bot Kullanımı")
+        message.guild.channels.cache.find(channel => channel.name === "Bot Kullanımı")
       )
         return message.channel.send(" Bot Paneli Zaten Ayarlanmış.");
       if (!message.member.hasPermission("ADMINISTRATOR"))

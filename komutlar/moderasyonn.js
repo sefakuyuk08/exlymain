@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
   const embed = new Discord.RichEmbed()
   .setAuthor(message.author.username, message.author.avatarURL)
   .setColor(0xF001FA)
-  .setDescription(`[**Quave-Komutlar**]`)
+  .setDescription(`[**Exlu-Komutlar**]`)
   .addField(`**Moderasyon-2**`,`1: \`+sunucu-kur\` = Otomatik Sunucu Kurar. \n 2 \`+davet-takip\` = Sunucuda Kimin Kaç Davet Yaptığını Görürsünüz.\n 3: \`+resimliyazı\` = Resimli Yazı Atar. \n 4 \`+boks\` = Boks Yaparsınız.
 `)
   return message.channel.sendEmbed(embed);

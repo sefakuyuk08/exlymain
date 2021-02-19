@@ -18,8 +18,8 @@ module.exports.run = async (bot, message) => {
       `%${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}`,
       true
     )
-    .addField(`Destek Sunucusu`, `https://discord.gg/uYz5Pu7xqs `, false)
-    .addField(`Atlas Gaming`, `https://discord.gg/mg7zBCQE `, false)
+    .addField(`Destek Sunucusu`, `https://discord.gg/XVVyFs3KNa `, false)
+    .addField(`Voltran Bilişim`, `https://discord.gg/XVVyFs3KNa `, false)
     .setFooter(bot.user.username, bot.user.avatarURL);
   message.channel.send(embed);
 };
